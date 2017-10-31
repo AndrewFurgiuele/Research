@@ -1,4 +1,22 @@
+RandomWalk 
+1000000 iterations
+	number of connected busineses:
+		avg = 45.549
+		var = 454.9
 
+3000000 iterations
+	number of connected busineses:
+		avg = 98.122
+		var = 3226.122
+
+5000000 iterations
+	number of connected busineses:
+		avg = 133.48
+		var = 7279.623
+
+
+
+Flow
 given t = 7days:
 	598 intervals
 

@@ -15,7 +15,7 @@ k = 2
 
 
 class business:
-	def __init__(self,id, n, nbhd,addy, c, st, pCode, lat, log, star, rCount):
+	def __init__(self,id, n, nbhd,addy, c, st, pCode, lat, log, star, rCount,att):
 		self.id = id
 		self.name = n
 		self.neighborhood = nbhd	
@@ -28,6 +28,7 @@ class business:
 		self.stars = star
 		self.reviewCount = rCount
 		self.users = {}
+		self.attributes=att
 
 class review:
 	def __init__(self, id, uid, bid, stars, date):
@@ -56,7 +57,7 @@ def printBus(bus):
 	print("stars " + bus.stars)
 	print("review count " + bus.reviewCount)
 	print("number of reviews "+ str(len(bus.users))) 
-	print(users)
+	print(bus.attributes)
 	print("\n")
 
 
@@ -83,7 +84,13 @@ with open('ohioReviews.csv', 'r') as f:
 
 businesses = []
 for i in fullListB:
-	businesses.append(business(i[0],i[1],i[2],i[3],i[4],i[5],i[6],i[7],i[8],i[9],i[10]))
+	li = []
+	strr = i[11][3:]
+	strr = strr[:-2]
+	li = strr.strip().split(".")
+	
+	businesses.append(business(i[0],i[1],i[2],i[3],i[4],i[5],i[6],i[7],i[8],i[9],i[10],li))
+	
 
 del fullListB
 
@@ -225,7 +232,7 @@ for i in sorted_y:
 #print(lengthList)
 
 
-print(lengthList)
+#print(lengthList)
 print(str(np.var(lengthList)))
 print(str(np.average(lengthList)))
 
@@ -233,7 +240,7 @@ print(str(np.average(lengthList)))
 plt.plot(lengthList, 'ro')
 plt.ylabel("Number of active businesses")
 plt.xlabel("time")
-plt.show()
+#plt.show()
 
 
 
