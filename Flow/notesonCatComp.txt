@@ -1,0 +1,42 @@
+notes on attribute comparison: Number of businesses 9904
+
+1000000
+	Total: 
+		percent Avg: 14.27%
+		percent Var: 4.28% 
+
+
+	Number of Businesses with >0% similarity: (on average)
+		3980
+
+	Excluding 0% businesses:
+		percent Avg: 34.73%
+		percent Var: 3.04% 
+
+5000000
+	Total: 
+		percent Avg: 13.54%
+		percent Var: 4.03%
+
+
+	Number of Businesses with >0% similarity: (on average)
+		3880
+
+	Excluding 0% businesses:
+		percent Avg: 35.21%
+		percent Var: 3.07%
+
+10000000:
+	Total: 
+		percent Avg: 12.98%
+		percent Var: 3.84%
+
+
+	Number of Businesses with >0% similarity: (on average)
+		3880
+
+	Excluding 0% businesses:
+		percent Avg: 34.26%
+		percent Var: 2.75%
+
+	
