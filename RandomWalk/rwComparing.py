@@ -195,7 +195,7 @@ for i in range(1000000):
 			#print(b2)
 			#print(probMatrix[b1][b2])
 			#print("\n")
-	if i % 10000 == 0:
+	if i % 50000 == 0:
 		print(i)
 
 
@@ -278,16 +278,62 @@ def compBus(b1,b2):
 l = []
 for i in listT:
 	x = compBus(i[0],i[1])
-	print(str(i[0].id))
-	print(x)
-	print("\n")
+	#print(str(i[0].id))
+	#print(x)
+	#print("\n")
 	l.append(x)
 
-print(str(np.var(l)))
+
+l.sort()
+
+
+'''
+#excluding 0s
+percentDict = {}
+
+temp = []
+for i in l:
+	if i != 0:
+		temp.append(i)
+
+
+for i in temp:
+	if i in percentDict:
+		percentDict[i] += 1
+	else:
+		percentDict[i] = 1
+
+print(str(np.average(temp)))
+print(str(np.var(temp)))
+print(str(len(temp)))
+
+
+x,y = zip(*sorted(percentDict.items()))
+
+plt.plot(x,y, 'ro')
+plt.ylabel("Number of businesses")
+plt.xlabel("% similiarity ")
+plt.show()
+'''
+#including 0s
+
+percentDict = {}
+for i in l:
+	if i in percentDict:
+		percentDict[i] += 1
+	else:
+		percentDict[i] = 1
+
+x,y = zip(*sorted(percentDict.items()))
+
+plt.plot(x,y, 'ro')
+plt.ylabel("Number of businesses")
+plt.xlabel("% similiarity ")
+plt.show()
+
 print(str(np.average(l)))
-
-
-
+print(str(np.var(l)))
+print(str(len(l)))
 
 
 
